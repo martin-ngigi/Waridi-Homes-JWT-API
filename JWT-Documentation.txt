@@ -1,0 +1,208 @@
+GIthub: https://github.com/jod35/Building-APIS-with-DRF
+Youtube : https://www.youtube.com/watch?v=Dc0blFip6B8
+POSTMAN : Use JWT Django.postman-collection.json
+
+Intall:
+pip install requirements.txt
+
+ENDPOINTS IN POSTMAN
+---------------------------
+1. POST -> (singup) register account:
+ endpoint -> http://127.0.0.1:8000/auth/signup/
+ NB: Date-format -> YYYY-MM-DD
+ chose body then raw then in the text, chose json and paste the following:
+{
+    "email": "martinwainaina@gmail.com",
+    "username": "martinwainaina@gmail.com",
+    "phone": "0797292290",
+    "first_name": "Martin",
+    "last_name": "Wainaina",
+    "date_of_birth": "1999-11-23",
+    "password": "12345678",
+    "gender": "M",
+    "user_type": "C"
+}
+
+espected reponse:
+{
+    "id": 2,
+    "email": "martinwainaina@gmail.com",
+    "username": "martinwainaina@gmail.com",
+    "last_login": "2022-11-22T09:44:53.358405Z",
+    "is_superuser": false,
+    "first_name": "Martin",
+    "last_name": "Wainaina",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2022-11-22T09:44:52.734240Z",
+    "phone": "0797292290",
+    "gender": "M",
+    "user_type": "C",
+    "groups": [],
+    "user_permissions": []
+}
+
+2. POST ->(create auth token):
+    endpoint -> http://127.0.0.1:8000/auth/jwt/create/
+    chose body then raw then in the text, chose json and paste the following:
+  {
+    "email": "martinwainaina@gmail.com",
+    "username": "martinwainaina@gmail.com",
+    "password": "12345678"
+}
+
+    then click send
+    you will get a result such as:
+           {
+                "refresh": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY2OTE5NzA2MiwiaWF0IjoxNjY5MTEwNjYyLCJqdGkiOiJiMDYxYTAwYTNkMTM0ZTcyOTZlNmFmYzZkYTViNDA5OCIsInVzZXJfaWQiOjJ9.ImMAVGlYepwmRGZYcawqdYLiVCodfFuS-Px8GktWPRA",
+                "access": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY5MTE3ODYyLCJpYXQiOjE2NjkxMTA2NjIsImp0aSI6IjhhMGJhNTljODg4ZTQ1OGQ5NjQ5OWY4NDRmYmZjNzNlIiwidXNlcl9pZCI6Mn0.6_DaA1VbbZTKO75LAbB4NewFsK5fj7vAx_sxo0yxEHQ"
+            }
+
+3. POST -> Create a refresh Token:
+EndPoint: http://127.0.0.1:8000/auth/jwt/refresh/
+The Refresh token is the one obtained above.... The reason is; after sometime the access token expires so must create a new access token using the refresh token
+chose body then raw then in the text, chose json and paste the following:
+      {
+    "refresh": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY2OTE5NzA2MiwiaWF0IjoxNjY5MTEwNjYyLCJqdGkiOiJiMDYxYTAwYTNkMTM0ZTcyOTZlNmFmYzZkYTViNDA5OCIsInVzZXJfaWQiOjJ9.ImMAVGlYepwmRGZYcawqdYLiVCodfFuS-Px8GktWPRA"
+    }
+
+The result will be:
+{
+    "access": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY5MTE4MDcwLCJpYXQiOjE2NjkxMTA2NjIsImp0aSI6Ijg2MDM0ZTVjZjZkMjQ3MTE4NTAyM2ZlM2MzYTUyNDM1IiwidXNlcl9pZCI6Mn0.8YsptatVuWJjyZu_ryWhnrBwxoJ_ZhcxHY9zQyyR77U"
+}
+
+
+
+4. POST -> Verify accesstoken:
+EndPoint -> http://127.0.0.1:8000/auth/jwt/verify/
+The token is the obtained above's result 
+chose body then raw then in the text, chose json and paste the following:
+{
+    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY5MTE4MDcwLCJpYXQiOjE2NjkxMTA2NjIsImp0aSI6Ijg2MDM0ZTVjZjZkMjQ3MTE4NTAyM2ZlM2MzYTUyNDM1IiwidXNlcl9pZCI6Mn0.8YsptatVuWJjyZu_ryWhnrBwxoJ_ZhcxHY9zQyyR77U"
+}
+
+if successful, result will be:
+{}
+
+
+5. POST -> Login (only JWT token)
+Endpoint -> http://127.0.0.1:8000/auth/login/
+chose body then raw then in the text, chose json and paste the following:
+
+{
+    "email": "martinwainaina@gmail.com",
+    "username": "martinwainaina@gmail.com",
+    "password": "12345678"
+}
+
+
+
+Result: 
+{
+    "message": "Login Successful",
+    "token": {
+        "access": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY5MTE4MjgyLCJpYXQiOjE2NjkxMTEwODIsImp0aSI6IjY4MjgzNTQzNjczNTQ3Yzc5MTVkNjdlMmRjNWIwOTM2IiwidXNlcl9pZCI6Mn0.Br0y_tK9TQKIx-iLksUFcqqyT-ByPwFKlqBPJ_22cy0",
+        "refresh": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY2OTE5NzQ4MiwiaWF0IjoxNjY5MTExMDgyLCJqdGkiOiI3YjkxOTkyNjUxYTY0YjkyYjIwMmIxMmI3YmQyOGI1MSIsInVzZXJfaWQiOjJ9.VGORFSmvEiK9tJnDp9eizoPXDDtojUZVQB7mwsPokjg"
+    }
+}
+
+6. POST -> Login(user data + jwt tokens)
+Endpoint -> http://127.0.0.1:8000/auth/login2/
+chose body then raw then in the text, chose json and paste the following:
+
+{
+    "email": "martinwainaina@gmail.com",
+    "username": "martinwainaina@gmail.com",
+    "password": "12345678"
+}
+
+
+
+Result: 
+{
+    "message": "Login Successful",
+    "refresh": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY2OTE5NzYxMSwiaWF0IjoxNjY5MTExMjExLCJqdGkiOiJiNDQwMzMyY2MwYjE0MWM1YjVlMTIyZmNkYzM5Y2M3MyIsInVzZXJfaWQiOjJ9.zHCUjhnVL6x5pk6khDZuAlPhj1leZrgdsRcKOiViDvM",
+    "access": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY5MTE4NDExLCJpYXQiOjE2NjkxMTEyMTEsImp0aSI6IjI2ZTQ5ZTVhYjdjMTQxYTc5MTM3OTRkN2QxZTllMTc3IiwidXNlcl9pZCI6Mn0.MahbEwbo6gY6FhZSqiHSKlYEt4gILJNamGl1R81WJ3A",
+    "user": {
+        "id": 2,
+        "first_name": "Martin",
+        "last_name": "Wainaina",
+        "email": "martinwainaina@gmail.com",
+        "phone": "0797292290",
+        "password": "pbkdf2_sha256$320000$NggwUa4NWTTlzfINrz1ULm$G9ut72ZH5x/Co88pMGao27FUy4hlO/HQXu9zKJNzo4Q=",
+        "gender": "M",
+        "last_login": "2022-11-22T10:00:12.060895Z",
+        "is_superuser": false,
+        "is_active": true,
+        "date_joined": "2022-11-22T09:44:52.734000Z",
+        "groups": [],
+        "user_permissions": []
+    }
+}
+
+6. create post
+endpoint -> http://127.0.0.1:8000/posts/
+enter access token in the bearer ie access token
+body:
+{
+    "title": "My Post 1",
+    "content": "Added Post 1",
+    "created":"",
+    "author": 2
+
+}
+
+results:
+{
+    "id": 3,
+    "title": "My Post 1",
+    "content": "Added Post 1",
+    "created": "2022-11-22T10:10:50.127239Z",
+    "author": 2
+}
+
+
+retriev all posts 
+results:
+{
+    "count": 3,
+    "next": null,
+    "previous": null,
+    "results": [
+        {
+            "id": 3,
+            "title": "My Post 1",
+            "content": "Added Post 1",
+            "created": "2022-11-22T10:10:50.127000Z",
+            "author": 2
+        },
+        {
+            "id": 2,
+            "title": "My Post 1",
+            "content": "Added Post 1",
+            "created": "2022-11-22T10:08:37.617000Z",
+            "author": 2
+        },
+        {
+            "id": 1,
+            "title": "My Post 1",
+            "content": "Added Post 1",
+            "created": "2022-11-22T10:02:44.925000Z",
+            "author": 2
+        }
+    ]
+}
+
+
+USING NGROK TO MAKE MY SERVER GLOBAL
+-----------------------------------
+1. In the settings, change "ALLOWED_HOSTS = []" with "ALLOWED_HOSTS = ["*"]"
+2.from ngrok.com, click authentication.
+3. copy "ngrok config add-authtoken 2GFYbjaypXE69CpJQWzJLItkuyp_5sdUT1njCwmYqh89kK1MP" and run  it in the installed ngrok termial
+4. run in ngrok terminal: ngrok http 8000
+5. then copy the forwading url ie:
+        https://ed4e-41-80-98-18.in.ngrok.io
+
+6. replace "http://127.0.0.1:8000" with "https://ed4e-41-80-98-18.in.ngrok.io" in the endpoints.... 
+8. Run server
+9. Now can test using other devices
