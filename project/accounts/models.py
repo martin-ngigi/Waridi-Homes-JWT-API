@@ -42,7 +42,7 @@ class User(AbstractUser):
     email = models.CharField(max_length=80, unique = True)
     username = models.CharField(max_length=45)
     phone = models.CharField(max_length=20)
-    gender = models.CharField(max_length=1,choices=GENDER_CHOICES,default='M')
+    gender = models.CharField(max_length=1,choices=GENDER_CHOICES,default='M', null=True,  blank=True)
     user_type = models.CharField(max_length=1,choices=USER_TYPE,default='C')
     
     objects = CustomUserManager()

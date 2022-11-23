@@ -86,6 +86,7 @@ class TokenObtainPairSerializer(TokenObtainSerializer):
                 "phone": self.user.phone,
                 "password": self.user.password,
                 "gender": self.user.gender,
+                "user_type": self.user.user_type,
 
                 "last_login": timezone.now(),
                 "is_superuser": self.user.is_superuser,
