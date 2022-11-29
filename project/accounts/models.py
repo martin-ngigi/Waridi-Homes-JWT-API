@@ -43,7 +43,8 @@ class User(AbstractUser):
     username = models.CharField(max_length=45)
     phone = models.CharField(max_length=20)
     gender = models.CharField(max_length=1,choices=GENDER_CHOICES,default='M', null=True,  blank=True) #Gender can be empty
-    user_type = models.CharField(max_length=1,choices=USER_TYPE,default='C')
+    user_type = models.CharField(max_length=1,choices=USER_TYPE,default= 'C')
+    profile_image = models.TextField(null=True,  blank=True) #TextField has inifinite max length
     
     objects = CustomUserManager()
     USERNAME_FIELD = "email"
@@ -51,3 +52,11 @@ class User(AbstractUser):
 
     def _str_(self):
         return self.username+ ' '+self.email
+
+#For updating user profle ;-)
+#Can't update user through above User(AbstractUser) because email,username,password fields cant be empty... of which we dont want the user to update email and password fields.
+class UserDetail(models.Model):
+    first_name = models.CharField(max_length=40)
+    last_name = models.CharField(max_length=40)
+    phone = models.CharField(max_length=20)
+    profile_image = models.TextField(null=True,  blank=True) #TextField has inifinite max length

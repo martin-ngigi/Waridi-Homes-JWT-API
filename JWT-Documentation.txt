@@ -206,3 +206,24 @@ USING NGROK TO MAKE MY SERVER GLOBAL
 6. replace "http://127.0.0.1:8000" with "https://ed4e-41-80-98-18.in.ngrok.io" in the endpoints.... 
 8. Run server
 9. Now can test using other devices
+
+
+8.PUT -> Update user profile
+Copy the access token obtained from authentication and paste it in > Authorization > API key 
+Endoint: http://127.0.0.1:8000/auth/update/1/
+the body should be :
+{
+    "phone": "07972922901",
+    "first_name": "Martin1",
+    "last_name": "Wainaina1",
+    "profile_image": "https://avatars.githubusercontent.com/u/55280499?v=4"
+}
+
+response: 
+{
+    "id": 1,
+    "first_name": "Martin1",
+    "last_name": "Wainaina1",
+    "phone": "07972922901",
+    "profile_image": "https://avatars.githubusercontent.com/u/55280499?v=4"
+}

@@ -1,7 +1,7 @@
 from rest_framework.authtoken.models import Token
 from rest_framework.validators import ValidationError
 
-from .models import User
+from .models import User, UserDetail
 from django.utils import timezone
 
 from rest_framework_simplejwt.serializers import (
@@ -14,9 +14,9 @@ from rest_framework_simplejwt.serializers import (
 from rest_framework.response import Response
 from rest_framework import serializers
 
-class UserSerializer(serializers.ModelSerializer):
+class UserDetailSerializer(serializers.ModelSerializer):
     class Meta:
-        model = User
+        model = UserDetail
         fields = '__all__'
 
 class SignUpSerializer(serializers.ModelSerializer):
@@ -87,6 +87,7 @@ class TokenObtainPairSerializer(TokenObtainSerializer):
                 "password": self.user.password,
                 "gender": self.user.gender,
                 "user_type": self.user.user_type,
+                "profile_image": self.user.profile_image,
 
                 "last_login": timezone.now(),
                 "is_superuser": self.user.is_superuser,
@@ -95,7 +96,7 @@ class TokenObtainPairSerializer(TokenObtainSerializer):
                 "groups": [],
                 "user_permissions": [],
             }
-            serelizer = UserSerializer(my_user)
+            serelizer = UserDetailSerializer(my_user)
 
             if api_settings.UPDATE_LAST_LOGIN:
                 update_last_login(None, self.user)
