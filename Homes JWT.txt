@@ -1,0 +1,227 @@
+1. POST -> crate user:
+provide Authorization and bearer
+ http://127.0.0.1:8000/houses/users/
+ chose body then raw then in the text, chose json and paste the following:
+{
+	"agent_id": 1,
+	"agent_name": "Martin Ngigi",
+	"phone": "071234567"
+}
+
+espected reponse:
+{
+    "id": 1,
+    "houses": [],
+    "agent_id": 1,
+    "agent_name": "Martin Ngigi",
+    "phone": "071234567"
+}
+
+2. Get all users
+provide Authorization and bearer
+end point: http://127.0.0.1:8000/houses/users/
+Result:
+{
+    "count": 4,
+    "next": "http://127.0.0.1:8000/houses/users/?page=2",
+    "previous": null,
+    "results": [
+        {
+            "id": 1,
+            "houses": [],
+            "agent_id": 1,
+            "agent_name": "Martin Ngigi",
+            "phone": "071234567"
+        },
+        {
+            "id": 2,
+            "houses": [],
+            "agent_id": 2,
+            "agent_name": "Ken Nyoro",
+            "phone": "07129874"
+        },
+        {
+            "id": 3,
+            "houses": [],
+            "agent_id": 2,
+            "agent_name": "Ken Nyoro",
+            "phone": "07129874"
+        }
+    ]
+}
+
+3. POST -> crate house:
+ http://127.0.0.1:8000/houses/houses/
+ provide Authorization and bearer
+ chose body then raw then in the text, chose json and paste the following:
+ body: 
+ {
+    "user":1,
+    "title": "House 1",
+    "category": "One Bedroom",
+    "description": " Very spacious room",
+    "loaction": "Lavington, Nairobi",
+    "status": "Vacant",
+    "monthly_price": 100000
+}
+
+expected result:
+{
+    "id": 1,
+    "images": [],
+    "title": "House 1",
+    "category": "One Bedroom",
+    "description": "Very spacious room",
+    "loaction": "Lavington, Nairobi",
+    "status": "Vacant",
+    "add_date": "2022-12-04T19:31:38.993505Z",
+    "monthly_price": 100000,
+    "user": 1
+}
+
+
+4. Get all houses
+provide Authorization and bearer
+end point: http://127.0.0.1:8000/houses/houses/
+Result:
+{
+    "count": 2,
+    "next": null,
+    "previous": null,
+    "results": [
+        {
+            "id": 1,
+            "images": [],
+            "title": "House 1",
+            "category": "One Bedroom",
+            "description": "Very spacious room",
+            "loaction": "Lavington, Nairobi",
+            "status": "Vacant",
+            "add_date": "2022-12-04T19:31:38.993000Z",
+            "monthly_price": 100000,
+            "user": 1
+        },
+        {
+            "id": 2,
+            "images": [],
+            "title": "House 2",
+            "category": "two Bedroom",
+            "description": "Very spacious 2 room",
+            "loaction": "Lavington, Nairobi",
+            "status": "Vacant",
+            "add_date": "2022-12-04T19:35:21.523000Z",
+            "monthly_price": 200000,
+            "user": 2
+        }
+    ]
+}
+
+5.POST -> Create images
+ http://127.0.0.1:8000/houses/images/
+ provide Authorization and bearer
+ chose body then raw then in the text, chose json and paste the following:
+ body: 
+{
+    "house":1,
+    "title": "Kitchen Image",
+    "description": "Best kitche ever",
+    "url": "https://foyr.com/learn/wp-content/uploads/2021/06/one-wall-kitchen-design.jpg"
+}
+
+expected result:
+{
+    "count": 2,
+    "next": null,
+    "previous": null,
+    "results": [
+        {
+            "id": 1,
+            "title": "Kitchen Image",
+            "description": "Best kitche ever",
+            "url": "https://foyr.com/learn/wp-content/uploads/2021/06/one-wall-kitchen-design.jpg",
+            "house": 1
+        },
+        {
+            "id": 2,
+            "title": "Bedroom Image",
+            "description": "Best Bedroom ever",
+            "url": "https://wpmedia.roomsketcher.com/content/uploads/2021/12/09103646/Subtle_Blue_Shades_Large_Bedroom_idea-1024x768.jpg",
+            "house": 1
+        }
+    ]
+}
+
+
+
+//////////////////////////////////////////////////////
+-----------------------------------------------------
+FINNALLY GET ALL USERS:   ;-)
+{
+    "count": 4,
+    "next": "http://127.0.0.1:8000/houses/users/?page=2",
+    "previous": null,
+    "results": [
+        {
+            "id": 1,
+            "houses": [
+                {
+                    "id": 1,
+                    "images": [
+                        {
+                            "id": 1,
+                            "title": "Kitchen Image",
+                            "description": "Best kitche ever",
+                            "url": "https://foyr.com/learn/wp-content/uploads/2021/06/one-wall-kitchen-design.jpg",
+                            "house": 1
+                        },
+                        {
+                            "id": 2,
+                            "title": "Bedroom Image",
+                            "description": "Best Bedroom ever",
+                            "url": "https://wpmedia.roomsketcher.com/content/uploads/2021/12/09103646/Subtle_Blue_Shades_Large_Bedroom_idea-1024x768.jpg",
+                            "house": 1
+                        }
+                    ],
+                    "title": "House 1",
+                    "category": "One Bedroom",
+                    "description": "Very spacious room",
+                    "loaction": "Lavington, Nairobi",
+                    "status": "Vacant",
+                    "add_date": "2022-12-04T19:31:38.993000Z",
+                    "monthly_price": 100000,
+                    "user": 1
+                }
+            ],
+            "agent_id": 1,
+            "agent_name": "Martin Ngigi",
+            "phone": "071234567"
+        },
+        {
+            "id": 2,
+            "houses": [
+                {
+                    "id": 2,
+                    "images": [],
+                    "title": "House 2",
+                    "category": "two Bedroom",
+                    "description": "Very spacious 2 room",
+                    "loaction": "Lavington, Nairobi",
+                    "status": "Vacant",
+                    "add_date": "2022-12-04T19:35:21.523000Z",
+                    "monthly_price": 200000,
+                    "user": 2
+                }
+            ],
+            "agent_id": 2,
+            "agent_name": "Ken Nyoro",
+            "phone": "07129874"
+        },
+        {
+            "id": 3,
+            "houses": [],
+            "agent_id": 2,
+            "agent_name": "Ken Nyoro",
+            "phone": "07129874"
+        }
+    ]
+}

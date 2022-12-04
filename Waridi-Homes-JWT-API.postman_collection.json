@@ -15,7 +15,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"martinwainaina@gmail.com\",\r\n    \"username\": \"martinwainaina@gmail.com\",\r\n    \"phone\": \"0797292290\",\r\n    \"first_name\": \"Martin\",\r\n    \"last_name\": \"Wainaina\",\r\n    \"password\": \"12345678\",\r\n    \"gender\": \"F\",\r\n    \"user_type\": \"C\"\r\n}",
+							"raw": "{\r\n    \"email\": \"martinwainaina4@gmail.com\",\r\n    \"username\": \"martinwainaina4@gmail.com\",\r\n    \"phone\": \"0797292290\",\r\n    \"first_name\": \"Martin\",\r\n    \"last_name\": \"Wainaina\",\r\n    \"password\": \"12345678\",\r\n    \"gender\": \"F\",\r\n    \"user_type\": \"C\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -183,7 +183,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"martinwainaina@gmail.com\",\r\n    \"username\": \"martinwainaina@gmail.com\",\r\n    \"password\": \"12345678\"\r\n}",
+							"raw": "{\r\n    \"email\": \"martin@gmail.com\",\r\n    \"password\": \"12345678\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -305,6 +305,372 @@
 							"port": "8000",
 							"path": [
 								"posts",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "8. Update account",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"phone\": \"07972922901\",\r\n    \"first_name\": \"Martin1\",\r\n    \"last_name\": \"Wainaina1\",\r\n    \"profile_image\": \"AAA1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/auth/update/1/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"auth",
+								"update",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "houses",
+			"item": [
+				{
+					"name": "1 add users",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "Bearer  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjcwMTg4MjUwLCJpYXQiOjE2NzAxODEwNTAsImp0aSI6IjliYTQzNTA0NWNkNDQ1MDRiOTdhZGUwZDBhMzVlNGViIiwidXNlcl9pZCI6MX0.oKEGcsdHfbKz7riUBsP0elJ-cqgosaL5yYlWvrN7De8",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Authorization",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"agent_id\": 2,\r\n\t\"agent_name\": \"Ken Nyoro\",\r\n\t\"phone\": \"07129874\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/houses/users/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"houses",
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2 get users",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "Bearer  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjcwMTg4MjUwLCJpYXQiOjE2NzAxODEwNTAsImp0aSI6IjliYTQzNTA0NWNkNDQ1MDRiOTdhZGUwZDBhMzVlNGViIiwidXNlcl9pZCI6MX0.oKEGcsdHfbKz7riUBsP0elJ-cqgosaL5yYlWvrN7De8",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Authorization",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"agent_id\": 1,\r\n\t\"agent_name\": \"Martin Ngigi\",\r\n\t\"phone\": \"071234567\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/houses/users/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"houses",
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3. Create House",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "Bearer  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjcwMTg4MjUwLCJpYXQiOjE2NzAxODEwNTAsImp0aSI6IjliYTQzNTA0NWNkNDQ1MDRiOTdhZGUwZDBhMzVlNGViIiwidXNlcl9pZCI6MX0.oKEGcsdHfbKz7riUBsP0elJ-cqgosaL5yYlWvrN7De8",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Authorization",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\":1,\r\n    \"title\": \"House 1\",\r\n    \"category\": \"One Bedroom\",\r\n    \"description\": \" Very spacious room\",\r\n    \"loaction\": \"Lavington, Nairobi\",\r\n    \"status\": \"Vacant\",\r\n    \"monthly_price\": 100000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/houses/houses/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"houses",
+								"houses",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4. Get Houses",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "Bearer  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjcwMTg4MjUwLCJpYXQiOjE2NzAxODEwNTAsImp0aSI6IjliYTQzNTA0NWNkNDQ1MDRiOTdhZGUwZDBhMzVlNGViIiwidXNlcl9pZCI6MX0.oKEGcsdHfbKz7riUBsP0elJ-cqgosaL5yYlWvrN7De8",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Authorization",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\":1,\r\n    \"title\": \"House 1\",\r\n    \"category\": \"One Bedroom\",\r\n    \"description\": \" Very spacious room\",\r\n    \"loaction\": \"Lavington, Nairobi\",\r\n    \"status\": \"Vacant\",\r\n    \"monthly_price\": 100000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/houses/houses/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"houses",
+								"houses",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "5. Create Images",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "Bearer  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjcwMTg4MjUwLCJpYXQiOjE2NzAxODEwNTAsImp0aSI6IjliYTQzNTA0NWNkNDQ1MDRiOTdhZGUwZDBhMzVlNGViIiwidXNlcl9pZCI6MX0.oKEGcsdHfbKz7riUBsP0elJ-cqgosaL5yYlWvrN7De8",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Authorization",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"house\":1,\r\n    \"title\": \"Bedroom Image\",\r\n    \"description\": \"Best Bedroom ever\",\r\n    \"url\": \"https://wpmedia.roomsketcher.com/content/uploads/2021/12/09103646/Subtle_Blue_Shades_Large_Bedroom_idea-1024x768.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/houses/images/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"houses",
+								"images",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "6. Get Images",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "Bearer  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjcwMTg4MjUwLCJpYXQiOjE2NzAxODEwNTAsImp0aSI6IjliYTQzNTA0NWNkNDQ1MDRiOTdhZGUwZDBhMzVlNGViIiwidXNlcl9pZCI6MX0.oKEGcsdHfbKz7riUBsP0elJ-cqgosaL5yYlWvrN7De8",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Authorization",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"house\":1,\r\n    \"title\": \"Kitchen Image\",\r\n    \"description\": \"Best kitche ever\",\r\n    \"url\": \"myurl.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/houses/images/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"houses",
+								"images",
 								""
 							]
 						}

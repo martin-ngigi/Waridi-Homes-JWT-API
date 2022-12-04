@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     # Created apps
     "accounts",
     'posts',
+    'houses',
 
     # third-party-apps
     "rest_framework",
