@@ -88,7 +88,7 @@ class TokenObtainPairSerializer(TokenObtainSerializer):
                 "gender": self.user.gender,
                 "user_type": self.user.user_type,
                 "profile_image": self.user.profile_image,
-                "hasHouses": self.user.hasHouses,
+                "has_houses": self.user.has_houses,
 
                 "last_login": timezone.now(),
                 "is_superuser": self.user.is_superuser,

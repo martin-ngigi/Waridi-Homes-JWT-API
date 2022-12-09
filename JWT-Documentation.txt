@@ -138,7 +138,7 @@ Result:
         "gender": "F",
         "user_type": "C",
         "profile_image": null,
-        "hasHouses": false,
+        "has_houses": false,
         "last_login": "2022-12-09T18:10:23.986855Z",
         "is_superuser": false,
         "is_active": true,

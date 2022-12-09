@@ -45,7 +45,7 @@ class User(AbstractUser):
     gender = models.CharField(max_length=1,choices=GENDER_CHOICES,default='M', null=True,  blank=True) #Gender can be empty
     user_type = models.CharField(max_length=1,choices=USER_TYPE,default= 'C')
     profile_image = models.TextField(null=True,  blank=True) #TextField has inifinite max length
-    hasHouses = models.BooleanField(default=False) #Check if user has houses.
+    has_houses = models.BooleanField(default=False) #Check if user has houses.
     
     objects = CustomUserManager()
     USERNAME_FIELD = "email"
