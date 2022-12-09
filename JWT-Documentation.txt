@@ -25,21 +25,26 @@ ENDPOINTS IN POSTMAN
 
 espected reponse:
 {
-    "id": 2,
-    "email": "martinwainaina@gmail.com",
-    "username": "martinwainaina@gmail.com",
-    "last_login": "2022-11-22T09:44:53.358405Z",
-    "is_superuser": false,
-    "first_name": "Martin",
-    "last_name": "Wainaina",
-    "is_staff": false,
-    "is_active": true,
-    "date_joined": "2022-11-22T09:44:52.734240Z",
-    "phone": "0797292290",
-    "gender": "M",
-    "user_type": "C",
-    "groups": [],
-    "user_permissions": []
+    "message": "User Created Successfully",
+    "user": {
+        "id": 17,
+        "email": "martinwainaina5@gmail.com",
+        "username": "martinwainaina5@gmail.com",
+        "last_login": "2022-12-09T18:07:04.189766Z",
+        "is_superuser": false,
+        "first_name": "Martin",
+        "last_name": "Wainaina",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2022-12-09T18:07:03.610075Z",
+        "phone": "0797292290",
+        "gender": "F",
+        "user_type": "C",
+        "profile_image": null,
+        "hasHouses": false,
+        "groups": [],
+        "user_permissions": []
+    }
 }
 
 2. POST ->(create auth token):
@@ -121,20 +126,23 @@ chose body then raw then in the text, chose json and paste the following:
 Result: 
 {
     "message": "Login Successful",
-    "refresh": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY2OTE5NzYxMSwiaWF0IjoxNjY5MTExMjExLCJqdGkiOiJiNDQwMzMyY2MwYjE0MWM1YjVlMTIyZmNkYzM5Y2M3MyIsInVzZXJfaWQiOjJ9.zHCUjhnVL6x5pk6khDZuAlPhj1leZrgdsRcKOiViDvM",
-    "access": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY5MTE4NDExLCJpYXQiOjE2NjkxMTEyMTEsImp0aSI6IjI2ZTQ5ZTVhYjdjMTQxYTc5MTM3OTRkN2QxZTllMTc3IiwidXNlcl9pZCI6Mn0.MahbEwbo6gY6FhZSqiHSKlYEt4gILJNamGl1R81WJ3A",
+    "refresh": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY3MDY5NTgyMywiaWF0IjoxNjcwNjA5NDIzLCJqdGkiOiI2ODc1OTY3MDQ2N2Y0Zjc1OTgxODJlZDI5NjE3YjQ5ZCIsInVzZXJfaWQiOjE3fQ.XKzjxoPO641xNhsoUZu8PXMActesrz_v1ZxmP2G0M3o",
+    "access": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjcwNjE2NjIzLCJpYXQiOjE2NzA2MDk0MjMsImp0aSI6IjljOTk1MGIwOTk2YzRhNTFiNGZiOTc0YzUzMDZkZTc1IiwidXNlcl9pZCI6MTd9.hB2vgM1FA3RWQoLeFRQh853lIO4ZYC9LtZx-O93nips",
     "user": {
-        "id": 2,
+        "id": 17,
         "first_name": "Martin",
         "last_name": "Wainaina",
-        "email": "martinwainaina@gmail.com",
+        "email": "martinwainaina5@gmail.com",
         "phone": "0797292290",
-        "password": "pbkdf2_sha256$320000$NggwUa4NWTTlzfINrz1ULm$G9ut72ZH5x/Co88pMGao27FUy4hlO/HQXu9zKJNzo4Q=",
-        "gender": "M",
-        "last_login": "2022-11-22T10:00:12.060895Z",
+        "password": "pbkdf2_sha256$320000$00z8EjdytwNVC6zM6byPQV$MPny9p7t2w+slwBmU2RJ8TC36TnOHTsU1cd/aCgCVfQ=",
+        "gender": "F",
+        "user_type": "C",
+        "profile_image": null,
+        "hasHouses": false,
+        "last_login": "2022-12-09T18:10:23.986855Z",
         "is_superuser": false,
         "is_active": true,
-        "date_joined": "2022-11-22T09:44:52.734000Z",
+        "date_joined": "2022-12-09T18:07:03.610000Z",
         "groups": [],
         "user_permissions": []
     }
