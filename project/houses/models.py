@@ -54,7 +54,7 @@ class Houses(models.Model):
 	title = models.CharField(max_length=50)
 	category = models.CharField(max_length=50)
 	description= models.TextField(max_length=100000)
-	loaction = models.CharField(max_length=100)
+	location = models.CharField(max_length=100)
 	status = models.TextField(max_length=20, choices=STATUS, default='Vacant')
 	add_date = models.DateTimeField(auto_now_add=True)
 	monthly_price=models.IntegerField()
