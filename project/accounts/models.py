@@ -61,3 +61,5 @@ class UserDetail(models.Model):
     last_name = models.CharField(max_length=40)
     phone = models.CharField(max_length=20)
     profile_image = models.TextField(null=True,  blank=True) #TextField has inifinite max length
+    has_houses = models.BooleanField(default=False) #Check if user has houses.
+
