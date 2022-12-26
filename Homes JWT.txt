@@ -59,7 +59,8 @@ Result:
     "user":1,
     "title": "House 1",
     "category": "One Bedroom",
-    "description": " Very spacious room",
+    "desc
+    ription": " Very spacious room",
     "location": "Lavington, Nairobi",
     "status": "Vacant",
     "monthly_price": 100000
