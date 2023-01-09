@@ -70,7 +70,8 @@ class Images(models.Model):
 	house = models.ForeignKey(Houses, related_name='images', on_delete=models.CASCADE)
 	title = models.CharField(max_length=500)
 	description= models.TextField(max_length=100000)
-	url = models.URLField(max_length=300)
+	#url = models.URLField(max_length=300)
+	url= models.TextField(max_length=100000)
 	
 	class Meat:
 		ordering = ('title')
