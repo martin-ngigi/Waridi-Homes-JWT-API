@@ -37,12 +37,14 @@ Installing requirements:
 2.1 Create the Django project
 In the VS Code Terminal where your virtual environment is activated, run the following command:
     django-admin startproject project
-
+    
+- navigate to mongo_django_project by typing:
+    cd project
+    
 2.2 Create an empty development database by running the following command:
     python manage.py migrate
 
-navigate to mongo_django_project by typing:
-    cd project
+
 2.3 To verify the Django project, make sure your virtual environment is activated, then start Django's development server using the command:
      python manage.py runserver
 
